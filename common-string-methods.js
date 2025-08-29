@@ -69,23 +69,23 @@ Complete the following tasks and assign the results to the specified variables. 
 let inputString = "  Welcome to the Coding Bootcamp! Learn JavaScript today.  ";
 
 // 1. Searching
-let hasJavaScript; // Your code here
-let codingPosition; // Your code here
-let startsWithWelcome; // Your code here
-let endsWithToday; // Your code here
+let hasJavaScript = inputString.includes("JavaScript"); // True
+let codingPosition = inputString.indexOf("Coding");  // 17
+let startsWithWelcome = inputString.startsWith("Welcome"); // False; because there is whitespace before "Welcome"
+let endsWithToday = inputString.endsWith("today."); // False; because there is whitespace after "today."
 
 // 2. Transforming
-let lowercaseString; // Your code here
-let uppercaseString; // Your code here
-let trimmedString; // Your code here
-let replacedString; // Your code here
+let lowercaseString = inputString.toLowerCase(); // "  welcome to the coding bootcamp! learn javascript today.  "
+let uppercaseString = inputString.toUpperCase(); // "  WELCOME TO THE CODING BOOTCAMP! LEARN JAVASCRIPT TODAY.  "
+let trimmedString = inputString.trim(); // "Welcome to the Coding Bootcamp! Learn JavaScript today."
+let replacedString = inputString.replace("JavaScript","coding"); // "  Welcome to the Coding Bootcamp! Learn coding today.  "
 
 // 3. Breaking Apart
-let wordsArray; // Your code here
+let wordsArray = inputString.split(" "); // [" ","Welcome","to","the","coding","bootcamp!","learn","Javascript","today."," "]
 
 // 4. Retrieving
-let firstCharacter; // Your code here
-let extractedBootcamp; // Your code here
+let firstCharacter = trimmedString.charAt(0); // "W"
+let extractedBootcamp = trimmedString.slice(22,30); // "Bootcamp"
 
 // Log all results
 console.log({
@@ -100,4 +100,49 @@ console.log({
   wordsArray,
   firstCharacter,
   extractedBootcamp,
+});
+
+//Practice Problem 1: Activity #1
+let phrase = "Learning JavaScript is fun!";
+let checkFor = phrase.includes("JavaScript"); // True
+let positionOf = phrase.indexOf("fun"); // 23
+console.log({
+  checkFor,
+  positionOf,
+});
+
+//Practice Problem 1: Acivity #2
+let originalString = " CODE BOOTCAMP ";
+let alteredString = originalString.trim().toLowerCase(); // "code bootcamp"
+let transformedString = originalString.replace("BOOTCAMP","JavaScript"); // " CODE JavaScript "
+console.log({
+  alteredString,
+  transformedString,
+});
+
+//Practice Problem 1: Activity #3
+let fact = "Coding is fun and educational"
+let splitFact = fact.split(" "); // ["Coding","is","fun","and","educational"]
+console.log(splitFact); 
+
+//Practice Problem 1: Activity #4
+let word = "Bootcamp"
+let firstUp = word.charAt(0); // "B"
+let extractedWord = word.slice(-4); // "camp"
+console.log({
+  firstUp,
+  extractedWord,
+});
+
+//Practice Problem 1: Advanced Challenge
+let challenge = `Customer: John Doe
+Order: Apple, Banana, Grape
+Total: $20.50`;
+let customerName = challenge.slice(10,18);
+let listOfItems = challenge.slice(25,46).split(",");
+let largeTotal = challenge.slice(-13).toUpperCase();
+console.log({
+  customerName,
+  listOfItems,
+  largeTotal
 });
